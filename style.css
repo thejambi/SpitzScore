@@ -125,7 +125,7 @@ html, body {
 	border-bottom: 1px solid #bbbbbb;
 	font-size: 20px;
 }
-.queenIndicator, .queenIndicatorOn, .callIndicator, .callIndicatorOn, .nameDisplay {
+.queenIndicator, .queenIndicatorOn, .callIndicator, .callIndicatorOn, .nameDisplay, .dealerDisplay {
 	display: block;
 	float: left;
 	height: 26px;
@@ -159,11 +159,14 @@ html, body {
 }
 .nameDisplay {
 	padding-left: 12px;
-	width: 154px;
+	width: 150px;
 	overflow: hidden;
 }
 .scoreDisplay {
 	float: right;
+}
+.dealerDisplay {
+	width: 12px;
 }
 
 .callSelectionHidden {

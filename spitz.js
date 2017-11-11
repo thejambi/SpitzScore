@@ -29,6 +29,7 @@ for (var i = 1; i <= 4; i++) {
 var savedGameKey = "savedGame";
 var playerNameKey = "playerName";	// To add player num after
 var playerScoreKey = "playerScore";	// To add player num after
+var dealerKey = "dealer";
 
 if (storage.getItem(savedGameKey) == "true") {
 	startGame();
@@ -267,10 +268,35 @@ function applyPoints() {
 		}
 	}
 
+	shiftDealer();
+
 	updatePlayerScores();
 
 	elem.className = "disabled";
 	resetHand();
+}
+
+function shiftDealer() {
+	// Clear dealer displays
+	var dealerDispIds = [];
+	dealerDispIds.push('dealerDisp1');
+	dealerDispIds.push('dealerDisp2');
+	dealerDispIds.push('dealerDisp3');
+	dealerDispIds.push('dealerDisp4');
+	for (var index in dealerDispIds) {
+		var id = dealerDispIds[index];
+		document.getElementById(id).innerText = "";
+	}
+
+	var currentDealerIndex = storage.getItem(dealerKey);
+	if (!currentDealerIndex) {
+		storage.setItem(dealerKey, 0);
+		currentDealerIndex = 0;
+	} else {
+		currentDealerIndex = (parseInt(currentDealerIndex) + 1) % 4;
+	}
+	storage.setItem(dealerKey, currentDealerIndex);
+	document.getElementById(dealerDispIds[currentDealerIndex]).innerText = "*";
 }
 
 function playerCall(callType) {
