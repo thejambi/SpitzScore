@@ -30,10 +30,10 @@ html, body {
   font-size: 17px;
 }
 
-.navbar .navbarItem:hover {
+/*.navbar .navbarItem:hover {
   background: #eee;
   color: black;
-}
+}*/
 
 .navbar div.active {
   background-color: #eee;

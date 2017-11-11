@@ -58,6 +58,7 @@ function startGame() {
 	storage.setItem(savedGameKey, "true");
 	updatePlayerScores();
 	resetHand();
+	shiftDealer();
 }
 
 function hideContainers() {
