@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Spitzer Scorekeeper</title>
+  
+  <link href="style.css" rel="stylesheet" type="text/css">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+
+<div class='contentContainer'>
+
+<div id="playerEntryContainer" class="topLevelHidden">
+	<h2>Spitzer Scorekeeper</h2>
+	<div class="heading">Player Names</div>
+	<input type="text" placeholder="Player Name..." id="nameInput1" /><br />
+	<input type="text" placeholder="Player Name..." id="nameInput2" /><br />
+	<input type="text" placeholder="Player Name..." id="nameInput3" /><br />
+	<input type="text" placeholder="Player Name..." id="nameInput4" /><br />
+	<div id="playGameButton" onclick="startGame();">Play</div><br />
+	<div>Enter names of the players and click Play.</div>
+</div>
+
+<div id="mainContainer" class="topLevelHidden">
+	<div id="playerScoresContainer">
+		<div id="player1Score" class="playerScoreDiv">
+			<div id="queenIndicator1" class="queenIndicator" onclick="setBlackQueen(1);">Q</div>
+			<div id="callIndicator1" class="callIndicator" onclick="initiateCall(1);">+</div>
+			<div id="nameDisp1" class="nameDisplay" onclick="setBlackQueen(1);"></div>
+			<div id="scoreDisp1" class="scoreDisplay"></div>
+		</div>
+		<div id="player2Score" class="playerScoreDiv">
+			<div id="queenIndicator2" class="queenIndicator" onclick="setBlackQueen(2);">Q</div>
+			<div id="callIndicator2" class="callIndicator" onclick="initiateCall(2);">+</div>
+			<div id="nameDisp2" class="nameDisplay" onclick="setBlackQueen(2);"></div>
+			<div id="scoreDisp2" class="scoreDisplay"></div>
+		</div>
+		<div id="player3Score" class="playerScoreDiv">
+			<div id="queenIndicator3" class="queenIndicator" onclick="setBlackQueen(3);">Q</div>
+			<div id="callIndicator3" class="callIndicator" onclick="initiateCall(3);">+</div>
+			<div id="nameDisp3" class="nameDisplay" onclick="setBlackQueen(3);"></div>
+			<div id="scoreDisp3" class="scoreDisplay"></div>
+		</div>
+		<div id="player4Score" class="playerScoreDiv">
+			<div id="queenIndicator4" class="queenIndicator" onclick="setBlackQueen(4);">Q</div>
+			<div id="callIndicator4" class="callIndicator" onclick="initiateCall(4);">+</div>
+			<div id="nameDisp4" class="nameDisplay" onclick="setBlackQueen(4);"></div>
+			<div id="scoreDisp4" class="scoreDisplay"></div>
+		</div>
+	</div>
+
+	<div id="callSelectionContainer">
+		<div id="callSelection" class="callSelectionHidden">
+			<div onclick="playerCall('P');">Regular/Call Partner</div>
+			<div onclick="playerCall('S');">Sneaker</div><br class="clearLeft" />
+			<div onclick="playerCall('Z');">Zola</div>
+			<div onclick="playerCall('ZS');">Zola Schneider</div><br class="clearLeft" />
+			<div onclick="playerCall('ZSS');">Zola Schneider Schwartz!</div>
+		</div>
+	</div>
+
+	<div id="pointSelectContainer">
+		<div class="pointSelectionRow">
+			<div id="0Aces" class="ptOff" onclick="setNumCards('Aces', 0, true);">None</div>
+			<div id="1Aces" class="ptOff" onclick="setNumCards('Aces', 1, true);">A</div>
+			<div id="2Aces" class="ptOff" onclick="setNumCards('Aces', 2, true);">A</div>
+			<div id="3Aces" class="ptOff" onclick="setNumCards('Aces', 3, true);">A</div>
+			<div id="4Aces" class="ptOff" onclick="setNumCards('Aces', 4, true);">A</div>
+		</div>
+		<div class="pointSelectionRow">
+			<div id="0Tens" class="ptOff" onclick="setNumCards('Tens', 0, true);">None</div>
+			<div id="1Tens" class="ptOff" onclick="setNumCards('Tens', 1, true);">10</div>
+			<div id="2Tens" class="ptOff" onclick="setNumCards('Tens', 2, true);">10</div>
+			<div id="3Tens" class="ptOff" onclick="setNumCards('Tens', 3, true);">10</div>
+			<div id="4Tens" class="ptOff" onclick="setNumCards('Tens', 4, true);">10</div>
+		</div>
+		<div class="pointSelectionRow">
+			<div id="0Kings" class="ptOff" onclick="setNumCards('Kings', 0, true);">None</div>
+			<div id="1Kings" class="ptOff" onclick="setNumCards('Kings', 1, true);">K</div>
+			<div id="2Kings" class="ptOff" onclick="setNumCards('Kings', 2, true);">K</div>
+			<div id="3Kings" class="ptOff" onclick="setNumCards('Kings', 3, true);">K</div>
+			<div id="4Kings" class="ptOff" onclick="setNumCards('Kings', 4, true);">K</div>
+		</div>
+		<div class="pointSelectionRow">
+			<div id="0Queens" class="ptOff" onclick="setNumCards('Queens', 0, true);">None</div>
+			<div id="1Queens" class="ptOff" onclick="setNumCards('Queens', 1, true);">Q</div>
+			<div id="2Queens" class="ptOff" onclick="setNumCards('Queens', 2, true);">Q</div>
+			<div id="3Queens" class="ptOff" onclick="setNumCards('Queens', 3, true);">Q</div>
+			<div id="4Queens" class="ptOff" onclick="setNumCards('Queens', 4, true);">Q</div>
+		</div>
+		<div class="pointSelectionRow">
+			<div id="0Jacks" class="ptOff" onclick="setNumCards('Jacks', 0, true);">None</div>
+			<div id="1Jacks" class="ptOff" onclick="setNumCards('Jacks', 1, true);">J</div>
+			<div id="2Jacks" class="ptOff" onclick="setNumCards('Jacks', 2, true);">J</div>
+			<div id="3Jacks" class="ptOff" onclick="setNumCards('Jacks', 3, true);">J</div>
+			<div id="4Jacks" class="ptOff" onclick="setNumCards('Jacks', 4, true);">J</div>
+		</div>
+		<div class="pointSelectionRow">
+			<div id="noTricksDiv" class="ptOff" onclick="setNoTricks();">
+				No Tricks
+			</div>
+			<div id="allTricksDiv" class="ptOff" onclick="setAllTricks();">
+				All Tricks
+			</div>
+		</div>
+		<br class="clearLeft" />
+		<div id="applyPointsDiv" class="disabled" onclick="applyPoints();">Apply Points</div>
+		<div id="pointsEarnedDiv">Card Points: 0</div>
+		<div id="QPtsEarnedDiv">Q Points: +0</div>
+	</div>
+</div>
+
+<div id="rulesContainer" class="topLevelHidden">
+	<div class="rulesContent">
+        <div id="rulesTextContainer" class="rulesContainer">
+        	<p>
+        		Spitzer is a four player trick-taking card game where partnerships vary from hand to hand. Players on the team that takes the most card points each hand earn game points. The first player to reach 42 game points wins.
+        	</p>
+        	<p>
+        		Deck: Play with all cards 7 and up, including Aces (the 7, 8, 9, K, 10, A, J, and Q of every suit)
+        		<br />
+        		Trump: The order of trump, from the highest to lowest, is: Q<span class="suit">♣</span>, 7<span class="redSuit suit">♦</span>, Q<span class="suit">♠</span>, Q<span class="redSuit suit">♥</span>, Q<span class="redSuit suit">♦</span>, J<span class="suit">♣</span>, J<span class="suit">♠</span>, J<span class="redSuit suit">♥</span>, J<span class="redSuit suit">♦</span>, A<span class="redSuit suit">♦</span>, 10<span class="redSuit suit">♦</span>, K<span class="redSuit suit">♦</span>, 9<span class="redSuit suit">♦</span>, 8<span class="redSuit suit">♦</span>
+        		<br />
+        		Note: "Trump" and "Diamonds" always refer to the set of all trump cards, which includes all the Jacks, Queens, and the remaining diamond cards. "Offsuit" refers to an off suit (<span class="suit">♣</span>, <span class="suit">♠</span>, or <span class="redSuit suit">♥</span>) set of cards. The order of offsuit cards, from highest to lowest, is: A, 10, K, 9, 8, 7.
+        		<br />
+        		Card Points: 
+        		<div class="cardPoints">
+        			<div class="cpLeft">A</div><div class="cpRight">-&nbsp;&nbsp; 11</div><br />
+        			<div class="cpLeft">10</div><div class="cpRight">-&nbsp;&nbsp; 10</div><br />
+        			<div class="cpLeft">K</div><div class="cpRight">-&nbsp;&nbsp; 4</div><br />
+        			<div class="cpLeft">Q</div><div class="cpRight">-&nbsp;&nbsp; 3</div><br />
+        			<div class="cpLeft">J</div><div class="cpRight">-&nbsp;&nbsp; 2</div><br />
+        			<div class="cpLeft">9, 8, 7</div><div class="cpRight">-&nbsp;&nbsp; 0</div><br />
+        			<br />
+        			<div class="cpLeft">Total</div><div class="cpRight">-&nbsp;&nbsp; 120</div><br />
+        		</div>
+        	</p>
+        	<p>
+        		Play:
+        		Someone deals. 8 cards are dealt. They can be dealt 3 to each player, then 2, then 3. 
+        		Teams: In a normal hand, teams are the players with the two black queens (the "Black Queens Team") and the other two players (the "Non-Black-Queens Team"). 
+        		
+
+        		
+        	</p>
+        </div>
+	</div>
+</div>
+
+<div id="playChartContainer" class="playChartContainer topLevelHidden">
+	<h2>Spitzer Play Chart</h2>
+	<h6>An interactive flowchart to know which card to play in a trick.</h6>
+	<div id="playChartQuestion" class="playChartQuestion"></div>
+	<div class="playChartChoice">
+		<div id="choiceYes" class="choiceYes" onclick="answerYes();">Yes</div>
+		<div id="choiceNo" class="choiceNo" onclick="answerNo();">No</div>
+		<div id="restartPlayChartButton" class="hidden" onclick="startPlayChart();">Restart</div>
+	</div>
+</div>
+
+</div>
+
+<!-- Navbar -->
+
+<div class="navbar">
+  <div id='scoreNav' class="navbarItem active" onclick="setNavTab(this, 'mainContainer');">Score</div>
+  <div id='rulesNav' class="navbarItem" onclick="setNavTab(this, 'rulesContainer');">Rules</div>
+  <div id='playChartNav' class="navbarItem" onclick="setNavTab(this, 'playChartContainer'); startPlayChart();">Play Chart</div>
+
+  <div class='navbarItem navRight' onclick="endGame();"><div id='endGameButton' class='disabled endGameHidden'>End Game</div></div>
+</div>
+
+<script src="spitz.js"></script>
+
+</body>
+</html>
