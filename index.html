@@ -21,37 +21,37 @@
 	<input type="text" placeholder="Player Name..." id="nameInput2" /><br />
 	<input type="text" placeholder="Player Name..." id="nameInput3" /><br />
 	<input type="text" placeholder="Player Name..." id="nameInput4" /><br />
-	<div id="playGameButton" onclick="startGame();">Play</div><br />
+	<div id="playGameButton" ontouchstart="startGame();">Play</div><br />
 	<div>Enter names of the players and click Play.</div>
 </div>
 
 <div id="mainContainer" class="topLevelHidden">
 	<div id="playerScoresContainer">
 		<div id="player1Score" class="playerScoreDiv">
-			<div id="queenIndicator1" class="queenIndicator" onclick="setBlackQueen(1);">Q</div>
-			<div id="callIndicator1" class="callIndicator" onclick="initiateCall(1);">+</div>
-			<div id="nameDisp1" class="nameDisplay" onclick="setBlackQueen(1);"></div>
+			<div id="queenIndicator1" class="queenIndicator" ontouchstart="setBlackQueen(1);">Q</div>
+			<div id="callIndicator1" class="callIndicator" ontouchstart="initiateCall(1);">+</div>
+			<div id="nameDisp1" class="nameDisplay" ontouchstart="setBlackQueen(1);"></div>
 			<div id="dealerDisp1" class="dealerDisplay"></div>
 			<div id="scoreDisp1" class="scoreDisplay"></div>
 		</div>
 		<div id="player2Score" class="playerScoreDiv">
-			<div id="queenIndicator2" class="queenIndicator" onclick="setBlackQueen(2);">Q</div>
-			<div id="callIndicator2" class="callIndicator" onclick="initiateCall(2);">+</div>
-			<div id="nameDisp2" class="nameDisplay" onclick="setBlackQueen(2);"></div>
+			<div id="queenIndicator2" class="queenIndicator" ontouchstart="setBlackQueen(2);">Q</div>
+			<div id="callIndicator2" class="callIndicator" ontouchstart="initiateCall(2);">+</div>
+			<div id="nameDisp2" class="nameDisplay" ontouchstart="setBlackQueen(2);"></div>
 			<div id="dealerDisp2" class="dealerDisplay"></div>
 			<div id="scoreDisp2" class="scoreDisplay"></div>
 		</div>
 		<div id="player3Score" class="playerScoreDiv">
-			<div id="queenIndicator3" class="queenIndicator" onclick="setBlackQueen(3);">Q</div>
-			<div id="callIndicator3" class="callIndicator" onclick="initiateCall(3);">+</div>
-			<div id="nameDisp3" class="nameDisplay" onclick="setBlackQueen(3);"></div>
+			<div id="queenIndicator3" class="queenIndicator" ontouchstart="setBlackQueen(3);">Q</div>
+			<div id="callIndicator3" class="callIndicator" ontouchstart="initiateCall(3);">+</div>
+			<div id="nameDisp3" class="nameDisplay" ontouchstart="setBlackQueen(3);"></div>
 			<div id="dealerDisp3" class="dealerDisplay"></div>
 			<div id="scoreDisp3" class="scoreDisplay"></div>
 		</div>
 		<div id="player4Score" class="playerScoreDiv">
-			<div id="queenIndicator4" class="queenIndicator" onclick="setBlackQueen(4);">Q</div>
-			<div id="callIndicator4" class="callIndicator" onclick="initiateCall(4);">+</div>
-			<div id="nameDisp4" class="nameDisplay" onclick="setBlackQueen(4);"></div>
+			<div id="queenIndicator4" class="queenIndicator" ontouchstart="setBlackQueen(4);">Q</div>
+			<div id="callIndicator4" class="callIndicator" ontouchstart="initiateCall(4);">+</div>
+			<div id="nameDisp4" class="nameDisplay" ontouchstart="setBlackQueen(4);"></div>
 			<div id="dealerDisp4" class="dealerDisplay"></div>
 			<div id="scoreDisp4" class="scoreDisplay"></div>
 		</div>
@@ -59,60 +59,60 @@
 
 	<div id="callSelectionContainer">
 		<div id="callSelection" class="callSelectionHidden">
-			<div onclick="playerCall('P');">Regular/Call Partner</div>
-			<div onclick="playerCall('S');">Sneaker</div><br class="clearLeft" />
-			<div onclick="playerCall('Z');">Zola</div>
-			<div onclick="playerCall('ZS');">Zola Schneider</div><br class="clearLeft" />
-			<div onclick="playerCall('ZSS');">Zola Schneider Schwartz!</div>
+			<div ontouchstart="playerCall('P');">Regular/Call Partner</div>
+			<div ontouchstart="playerCall('S');">Sneaker</div><br class="clearLeft" />
+			<div ontouchstart="playerCall('Z');">Zola</div>
+			<div ontouchstart="playerCall('ZS');">Zola Schneider</div><br class="clearLeft" />
+			<div ontouchstart="playerCall('ZSS');">Zola Schneider Schwartz!</div>
 		</div>
 	</div>
 
 	<div id="pointSelectContainer">
 		<div class="pointSelectionRow">
-			<div id="0Aces" class="ptOff" onclick="setNumCards('Aces', 0, true);">None</div>
-			<div id="1Aces" class="ptOff" onclick="setNumCards('Aces', 1, true);">A</div>
-			<div id="2Aces" class="ptOff" onclick="setNumCards('Aces', 2, true);">A</div>
-			<div id="3Aces" class="ptOff" onclick="setNumCards('Aces', 3, true);">A</div>
-			<div id="4Aces" class="ptOff" onclick="setNumCards('Aces', 4, true);">A</div>
+			<div id="0Aces" class="ptOff" ontouchstart="setNumCards('Aces', 0, true);">None</div>
+			<div id="1Aces" class="ptOff" ontouchstart="setNumCards('Aces', 1, true);">A</div>
+			<div id="2Aces" class="ptOff" ontouchstart="setNumCards('Aces', 2, true);">A</div>
+			<div id="3Aces" class="ptOff" ontouchstart="setNumCards('Aces', 3, true);">A</div>
+			<div id="4Aces" class="ptOff" ontouchstart="setNumCards('Aces', 4, true);">A</div>
 		</div>
 		<div class="pointSelectionRow">
-			<div id="0Tens" class="ptOff" onclick="setNumCards('Tens', 0, true);">None</div>
-			<div id="1Tens" class="ptOff" onclick="setNumCards('Tens', 1, true);">10</div>
-			<div id="2Tens" class="ptOff" onclick="setNumCards('Tens', 2, true);">10</div>
-			<div id="3Tens" class="ptOff" onclick="setNumCards('Tens', 3, true);">10</div>
-			<div id="4Tens" class="ptOff" onclick="setNumCards('Tens', 4, true);">10</div>
+			<div id="0Tens" class="ptOff" ontouchstart="setNumCards('Tens', 0, true);">None</div>
+			<div id="1Tens" class="ptOff" ontouchstart="setNumCards('Tens', 1, true);">10</div>
+			<div id="2Tens" class="ptOff" ontouchstart="setNumCards('Tens', 2, true);">10</div>
+			<div id="3Tens" class="ptOff" ontouchstart="setNumCards('Tens', 3, true);">10</div>
+			<div id="4Tens" class="ptOff" ontouchstart="setNumCards('Tens', 4, true);">10</div>
 		</div>
 		<div class="pointSelectionRow">
-			<div id="0Kings" class="ptOff" onclick="setNumCards('Kings', 0, true);">None</div>
-			<div id="1Kings" class="ptOff" onclick="setNumCards('Kings', 1, true);">K</div>
-			<div id="2Kings" class="ptOff" onclick="setNumCards('Kings', 2, true);">K</div>
-			<div id="3Kings" class="ptOff" onclick="setNumCards('Kings', 3, true);">K</div>
-			<div id="4Kings" class="ptOff" onclick="setNumCards('Kings', 4, true);">K</div>
+			<div id="0Kings" class="ptOff" ontouchstart="setNumCards('Kings', 0, true);">None</div>
+			<div id="1Kings" class="ptOff" ontouchstart="setNumCards('Kings', 1, true);">K</div>
+			<div id="2Kings" class="ptOff" ontouchstart="setNumCards('Kings', 2, true);">K</div>
+			<div id="3Kings" class="ptOff" ontouchstart="setNumCards('Kings', 3, true);">K</div>
+			<div id="4Kings" class="ptOff" ontouchstart="setNumCards('Kings', 4, true);">K</div>
 		</div>
 		<div class="pointSelectionRow">
-			<div id="0Queens" class="ptOff" onclick="setNumCards('Queens', 0, true);">None</div>
-			<div id="1Queens" class="ptOff" onclick="setNumCards('Queens', 1, true);">Q</div>
-			<div id="2Queens" class="ptOff" onclick="setNumCards('Queens', 2, true);">Q</div>
-			<div id="3Queens" class="ptOff" onclick="setNumCards('Queens', 3, true);">Q</div>
-			<div id="4Queens" class="ptOff" onclick="setNumCards('Queens', 4, true);">Q</div>
+			<div id="0Queens" class="ptOff" ontouchstart="setNumCards('Queens', 0, true);">None</div>
+			<div id="1Queens" class="ptOff" ontouchstart="setNumCards('Queens', 1, true);">Q</div>
+			<div id="2Queens" class="ptOff" ontouchstart="setNumCards('Queens', 2, true);">Q</div>
+			<div id="3Queens" class="ptOff" ontouchstart="setNumCards('Queens', 3, true);">Q</div>
+			<div id="4Queens" class="ptOff" ontouchstart="setNumCards('Queens', 4, true);">Q</div>
 		</div>
 		<div class="pointSelectionRow">
-			<div id="0Jacks" class="ptOff" onclick="setNumCards('Jacks', 0, true);">None</div>
-			<div id="1Jacks" class="ptOff" onclick="setNumCards('Jacks', 1, true);">J</div>
-			<div id="2Jacks" class="ptOff" onclick="setNumCards('Jacks', 2, true);">J</div>
-			<div id="3Jacks" class="ptOff" onclick="setNumCards('Jacks', 3, true);">J</div>
-			<div id="4Jacks" class="ptOff" onclick="setNumCards('Jacks', 4, true);">J</div>
+			<div id="0Jacks" class="ptOff" ontouchstart="setNumCards('Jacks', 0, true);">None</div>
+			<div id="1Jacks" class="ptOff" ontouchstart="setNumCards('Jacks', 1, true);">J</div>
+			<div id="2Jacks" class="ptOff" ontouchstart="setNumCards('Jacks', 2, true);">J</div>
+			<div id="3Jacks" class="ptOff" ontouchstart="setNumCards('Jacks', 3, true);">J</div>
+			<div id="4Jacks" class="ptOff" ontouchstart="setNumCards('Jacks', 4, true);">J</div>
 		</div>
 		<div class="pointSelectionRow">
-			<div id="noTricksDiv" class="ptOff" onclick="setNoTricks();">
+			<div id="noTricksDiv" class="ptOff" ontouchstart="setNoTricks();">
 				No Tricks
 			</div>
-			<div id="allTricksDiv" class="ptOff" onclick="setAllTricks();">
+			<div id="allTricksDiv" class="ptOff" ontouchstart="setAllTricks();">
 				All Tricks
 			</div>
 		</div>
 		<br class="clearLeft" />
-		<div id="applyPointsDiv" class="disabled" onclick="applyPoints();">Apply Points</div>
+		<div id="applyPointsDiv" class="disabled" ontouchstart="applyPoints();">Apply Points</div>
 		<div id="pointsEarnedDiv">Card Points: 0</div>
 		<div id="QPtsEarnedDiv">Q Points: +0</div>
 	</div>
@@ -160,9 +160,9 @@
 	<h6>An interactive flowchart to know which card to play in a trick.</h6>
 	<div id="playChartQuestion" class="playChartQuestion"></div>
 	<div class="playChartChoice">
-		<div id="choiceYes" class="choiceYes" onclick="answerYes();">Yes</div>
-		<div id="choiceNo" class="choiceNo" onclick="answerNo();">No</div>
-		<div id="restartPlayChartButton" class="hidden" onclick="startPlayChart();">Restart</div>
+		<div id="choiceYes" class="choiceYes" ontouchstart="answerYes();">Yes</div>
+		<div id="choiceNo" class="choiceNo" ontouchstart="answerNo();">No</div>
+		<div id="restartPlayChartButton" class="hidden" ontouchstart="startPlayChart();">Restart</div>
 	</div>
 </div>
 
@@ -171,11 +171,11 @@
 <!-- Navbar -->
 
 <div class="navbar">
-  <div id='scoreNav' class="navbarItem active" onclick="setNavTab(this, 'mainContainer');">Score</div>
-  <div id='rulesNav' class="navbarItem" onclick="setNavTab(this, 'rulesContainer');">Rules</div>
-  <div id='playChartNav' class="navbarItem" onclick="setNavTab(this, 'playChartContainer'); startPlayChart();">Play Chart</div>
+  <div id='scoreNav' class="navbarItem active" ontouchstart="setNavTab(this, 'mainContainer');">Score</div>
+  <div id='rulesNav' class="navbarItem" ontouchstart="setNavTab(this, 'rulesContainer');">Rules</div>
+  <div id='playChartNav' class="navbarItem" ontouchstart="setNavTab(this, 'playChartContainer'); startPlayChart();">Play Chart</div>
 
-  <div class='navbarItem navRight' onclick="endGame();"><div id='endGameButton' class='disabled endGameHidden'>End Game</div></div>
+  <div class='navbarItem navRight' ontouchstart="endGame();"><div id='endGameButton' class='disabled endGameHidden'>End Game</div></div>
 </div>
 
 <script src="spitz.js"></script>

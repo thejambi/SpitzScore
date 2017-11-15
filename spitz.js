@@ -32,12 +32,12 @@ var playerScoreKey = "playerScore";	// To add player num after
 var dealerKey = "dealer";
 
 if (storage.getItem(savedGameKey) == "true") {
-	startGame();
+	startGame(true);
 } else {
 	document.getElementById("playerEntryContainer").className = "topLevelShown";
 }
 
-function startGame() {
+function startGame(isLoadingSavedGame) {
 	// Get player names
 	for (var i = 1; i <= 4; i++) {
 		playerNames[i] = document.getElementById("nameInput" + i).value;
@@ -58,7 +58,8 @@ function startGame() {
 	storage.setItem(savedGameKey, "true");
 	updatePlayerScores();
 	resetHand();
-	shiftDealer();
+
+	shiftDealer(isLoadingSavedGame);
 }
 
 function hideContainers() {
@@ -277,7 +278,7 @@ function applyPoints() {
 	resetHand();
 }
 
-function shiftDealer() {
+function shiftDealer(butActuallyDoNotShift) {
 	// Clear dealer displays
 	var dealerDispIds = [];
 	dealerDispIds.push('dealerDisp1');
@@ -293,7 +294,7 @@ function shiftDealer() {
 	if (!currentDealerIndex) {
 		storage.setItem(dealerKey, 0);
 		currentDealerIndex = 0;
-	} else {
+	} else if (!butActuallyDoNotShift) {
 		currentDealerIndex = (parseInt(currentDealerIndex) + 1) % 4;
 	}
 	storage.setItem(dealerKey, currentDealerIndex);
