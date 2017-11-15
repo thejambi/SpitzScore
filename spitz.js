@@ -520,13 +520,7 @@ var endGameTimeout = 0;
 function endGame() {
 	clearTimeout(endGameTimeout);
 	var elem = document.getElementById("endGameButton");
-	// if (elem.className == "disabled") {
-	// 	elem.className = "enabled";
-	// 	endGameTimeout = setTimeout(function() {
-	// 		elem.className = "disabled";
-	// 	}, 2000);
-	// 	return;
-	// }
+	
 	if (elem.classList.contains("disabled")) {
 		elem.classList.remove("disabled");
 		elem.classList.add("enabled");
@@ -538,8 +532,7 @@ function endGame() {
 	}
 
 	resetHand();
-	document.getElementById("playerEntryContainer").className = "topLevelShown";
-	document.getElementById("mainContainer").className = "topLevelHidden";
+
 	hideEndGameButton();
 
 	for (var i = 1; i <= 4; i++) {
@@ -548,6 +541,8 @@ function endGame() {
 	}
 
 	storage.setItem(savedGameKey, "false");
+
+	setNavTab(this, 'mainContainer');
 }
 
 function exitRules() {
