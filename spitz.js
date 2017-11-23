@@ -86,7 +86,7 @@ function deactivateTabs() {
 	var tabIds = [];
 	tabIds.push('scoreNav');
 	tabIds.push('rulesNav');
-	tabIds.push('playChartNav');
+	// tabIds.push('playChartNav');
 
 	for (var index in tabIds) {
 		var id = tabIds[index];
